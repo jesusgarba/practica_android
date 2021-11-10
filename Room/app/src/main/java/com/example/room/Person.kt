@@ -6,9 +6,9 @@ import androidx.room.PrimaryKey
 @Entity
 data class Person (
     @PrimaryKey(autoGenerate = true)
-    val id: Int,
+    val id: Int = 0,
     val name: String,
-    val age: Int,
-    val address: String,
-    val isDone: Boolean = false
+    val age: Int = 0,
+    val address: String = "",
+    var isDone: Boolean = false
 )

@@ -6,18 +6,20 @@ import androidx.room.*
 interface PersonDao {
 
     @Query("SELECT * FROM Person")
-    suspend fun getAll(): List<Person>
+     suspend fun getAll(): MutableList<Person>
 
     @Query("select * from person where id = :id")
-    suspend fun getById(id: Int): Person
+     fun getById(id: Long): Person
 
     @Update
-    suspend fun update (person: Person)
+     fun update (person: Person): Int
 
     @Insert
-    suspend fun insert(people: List<Person>)
+     fun insert(people: List<Person>)
+
+    @Insert fun insertPeople(person: Person): Long
 
     @Delete
-    suspend fun delete(person: Person)
+     fun delete(person: Person): Int
 
 }
