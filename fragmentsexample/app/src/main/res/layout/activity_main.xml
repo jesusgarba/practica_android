@@ -1,9 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+   <androidx.appcompat.widget.Toolbar
+        android:id="@+id/myAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        android:elevation="10dp"
+        app:title="My custom appBar"
+        app:subtitle="pruebas"
+        app:titleTextColor="@color/white"
+        app:subtitleTextColor="@color/red"
+       android:layout_weight="0"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/red">
 
     <fragment
         android:name="com.example.fragmentsexample.RedFragment"
@@ -18,4 +39,5 @@
         android:id="@+id/second"
         android:layout_weight="1"/>
 
-</LinearLayout>
+    </LinearLayout>
+    </LinearLayout>
