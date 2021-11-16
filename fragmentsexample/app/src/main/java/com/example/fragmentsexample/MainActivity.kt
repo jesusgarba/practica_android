@@ -15,6 +15,18 @@ class MainActivity : AppCompatActivity(), OnFragmentActionsListener{
     private lateinit var binding: ActivityMainBinding
     private lateinit var toolbar: Toolbar
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        setSupportActionBar(findViewById(R.id.myAppBar))
+    }
+
+    override fun onClickFragmentButton() {
+        Toast.makeText(this, "the button has been clicked", Toast.LENGTH_SHORT).show()
+    }
+
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate( R.menu.appbar_menu,menu)
         return super.onCreateOptionsMenu(menu)
@@ -29,21 +41,5 @@ class MainActivity : AppCompatActivity(), OnFragmentActionsListener{
         else ->{
             super.onOptionsItemSelected(item)
         }
-    }
-
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        binding = ActivityMainBinding.inflate(layoutInflater)
-      /*  toolbar = findViewById(R.id.myAppBar)
-        toolbar.title = ""
-        setSupportActionBar(toolbar)*/
-        setContentView(binding.root)
-        setSupportActionBar(findViewById(R.id.myAppBar))
-    }
-
-    override fun onClickFragmentButton() {
-        Toast.makeText(this, "the button has been clicked", Toast.LENGTH_SHORT).show()
     }
 }
